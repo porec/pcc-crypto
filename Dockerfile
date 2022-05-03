@@ -4,8 +4,6 @@ FROM brannondorsey/alpine-xmrig:v2.14.1
 
 LABEL application=pcc-crypto
 
-RUN mkdir pcc-crypto
-
 CMD ["./xmrig --donate-level 1 -o pool.minergate.com:45700 -u ninja@miner.com -p x -k"]
 
 EXPOSE 80
