@@ -24,6 +24,9 @@ jobs:
     - name: Twistcli download
       run: curl -s -k -u $PC_USER:$PC_PASS $PC_CONSOLE_URL/api/v1/util/twistcli -v -o twistcli;chmod +x twistcli
     
+    - name: Scan Repo with Prisma Cloud
+      run: sudo ./twistcli coderepo scan --address $PC_CONSOLE_URL -u $PC_USER -p $PC_PASS --details --repository $GITHUB_REPOSITORY ./
+  
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag $IMAGE_NAME
     
