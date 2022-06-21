@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Twistcli download
+    - name: Twistcli Download
       run: curl -s -k -u $PC_USER:$PC_PASS $PC_CONSOLE_URL/api/v1/util/twistcli -v -o twistcli;chmod +x twistcli
     
     - name: Scan Repo with Prisma Cloud
